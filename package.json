@@ -1,0 +1,22 @@
+{
+  "name": "petcare-modern",
+  "version": "2.0.0",
+  "description": "Sistema moderno e responsivo para gestão de clínica veterinária",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "check": "node --check backend/server.js && node --check backend/routes/auth.js && node --check backend/routes/clientes.js && node --check backend/routes/pets.js && node --check backend/routes/veterinarios.js && node --check backend/routes/consultas.js && node --check backend/routes/dashboard.js && node --check backend/routes/prontuarios.js && node --check backend/routes/vacinacoes.js && node --check backend/utils/bootstrap.js && node --check backend/utils/migrations.js && node --check frontend/js/api.js && node --check frontend/js/login.js && node --check frontend/js/app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

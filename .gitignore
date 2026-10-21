@@ -1,0 +1,16 @@
+# Dependências
+node_modules/
+frontend/node_modules/
+
+# Segredos e variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos temporários
+.DS_Store
+coverage/

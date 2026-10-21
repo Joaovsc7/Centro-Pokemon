@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2f5d8a">
+  <title>Centro Pokémon | Central de Treinadores</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="logo logo-light">
+          <span class="logo-mark pokeball-logo" aria-label="Pokébola"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#fff" stroke="#172033" stroke-width="2"/><path d="M2 24a22 22 0 0 1 44 0Z" fill="#f02d43"/><path d="M2 24h44" stroke="#172033" stroke-width="5"/><circle cx="24" cy="24" r="7" fill="#fff" stroke="#172033" stroke-width="3"/><circle cx="24" cy="24" r="3" fill="#fff"/></svg></span>
+          <div><strong>Centro Pokémon</strong><small>Clínica de Treinadores</small></div>
+        </div>
+        <button class="icon-button sidebar-close" id="sidebar-close"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+
+      <nav class="menu">
+        <span class="menu-label">MENU PRINCIPAL</span>
+        <button class="menu-item active" data-section="dashboard"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span><span>Visão geral</span></button>
+        <button class="menu-item" data-section="clientes"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.3"/><path d="M16 14.3c2.8.4 5 2.6 5 5.7"/></svg></span><span>Treinadores</span></button>
+        <button class="menu-item" data-section="pets"><span><svg class="icon pokeball-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#17233b" stroke-width="1.5"/><path d="M2 12a10 10 0 0 1 20 0Z" fill="#ef3348"/><path d="M2 12h20" stroke="#17233b" stroke-width="2.2"/><circle cx="12" cy="12" r="3.1" fill="#fff" stroke="#17233b" stroke-width="1.5"/></svg></span><span>Pokémon</span></button>
+        <button class="menu-item" data-section="pokedex"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><path d="M3 12h6m6 0h6"/></svg></span><span>Pokédex</span></button>
+        <button class="menu-item" data-section="veterinarios"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span><span>Equipe</span></button>
+        <button class="menu-item" data-section="consultas"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1Z"/><path d="M8.5 12h7M8.5 16h5"/></svg></span><span>Atendimentos</span></button>
+        <button class="menu-item" data-section="calendario"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>Calendário</span></button>
+      </nav>
+
+      <div class="sidebar-profile">
+        <div class="avatar ash-avatar" id="sidebar-avatar"><img src="assets/images/avatar-ash.png" alt="Ash Ketchum" title="Ash Ketchum"></div>
+        <div>
+          <strong id="sidebar-name">Usuário</strong>
+          <small id="sidebar-role">Perfil</small>
+        </div>
+        <button class="icon-button" id="logout" title="Sair"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg></button>
+      </div>
+    </aside>
+
+    <div class="content-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button mobile-menu" id="mobile-menu"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div>
+            <p class="breadcrumb">Centro Pokémon / <span id="breadcrumb-page">Visão geral</span></p>
+            <h1 id="page-title">Visão geral</h1>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="desktop-search">
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+            <input id="global-search" placeholder="Pesquisar nesta página">
+          </div>
+          <button class="icon-button" id="theme-toggle" title="Alternar tema"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg></button>
+          <button class="btn btn-primary desktop-action" id="quick-new">+ Novo atendimento</button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="page-section active" id="dashboard">
+          <div class="welcome-banner pokemon-center-banner reference-banner">
+            <img class="banner-reference" src="images/pokemon-center-banner.png" alt="Banner do Centro Pokémon com Pikachu e Chansey" loading="eager">
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card" data-go="clientes" role="link" tabindex="0" aria-label="Abrir treinadores cadastrados">
+              <span class="stat-icon soft-green"><img src="images/trainer-icon.png" alt="" aria-hidden="true"></span>
+              <div><small>Treinadores cadastrados</small><strong id="total-clientes">0</strong><span class="positive">Base cadastrada</span></div>
+            </article>
+            <article class="stat-card" data-go="pets" role="link" tabindex="0" aria-label="Abrir Pokémon cadastrados">
+              <span class="stat-icon soft-blue"><img src="images/pokemon-icon.png" alt="" aria-hidden="true"></span>
+              <div><small>Pokémon cadastrados</small><strong id="total-pets">0</strong><span class="positive">Prontuários disponíveis</span></div>
+            </article>
+            <article class="stat-card" data-go="veterinarios" role="link" tabindex="0" aria-label="Abrir equipe do centro">
+              <span class="stat-icon soft-purple"><img src="images/team-icon.png" alt="" aria-hidden="true"></span>
+              <div><small>Equipe do centro</small><strong id="total-veterinarios">0</strong><span>Equipe clínica</span></div>
+            </article>
+            <article class="stat-card" data-go="consultas" role="link" tabindex="0" aria-label="Abrir atendimentos de hoje">
+              <span class="stat-icon soft-orange"><img src="images/appointments-icon.png" alt="" aria-hidden="true"></span>
+              <div><small>Atendimentos hoje</small><strong id="total-consultas-hoje">0</strong><span>Agenda do dia</span></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel chart-panel">
+              <div class="panel-header">
+                <div><h3>Atendimentos por mês</h3><p>Últimos seis meses</p></div>
+              </div>
+              <canvas id="monthly-chart" class="dashboard-chart" height="150"></canvas>
+            </article>
+
+            <article class="panel chart-panel">
+              <div class="panel-header">
+                <div><h3>Pokémon por espécie</h3><p>Distribuição atual</p></div>
+              </div>
+              <canvas id="species-chart" class="dashboard-chart" height="150"></canvas>
+            </article>
+          </div>
+
+          <article class="panel">
+            <div class="panel-header">
+              <div><h3>Próximos atendimentos</h3><p>Atendimentos agendados</p></div>
+              <button class="text-button" data-go="consultas">Ver agenda <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+            <div class="appointment-list" id="upcoming-list"></div>
+          </article>
+        </section>
+
+        <section class="page-section team-page trainer-page" id="clientes">
+          <div class="team-intro">
+            <div><span class="eyebrow">CENTRO POKÉMON</span><h2>Treinadores Pokémon</h2><p>Conheça os treinadores, consulte suas regiões e acompanhe seus parceiros Pokémon.</p></div>
+            <button class="btn btn-primary" onclick="abrirCliente()">+ Novo treinador</button>
+          </div>
+          <div class="team-stats trainer-stats">
+            <article class="team-stat team-stat-pink"><span class="team-stat-icon">♟</span><div><small>Treinadores</small><strong id="trainer-total">0</strong><span>Cadastros no Centro</span></div></article>
+            <article class="team-stat team-stat-blue"><span class="team-stat-icon">◉</span><div><small>Pokémon registrados</small><strong id="trainer-pokemon-total">0</strong><span>Parceiros cadastrados</span></div></article>
+            <article class="team-stat team-stat-purple"><span class="team-stat-icon">⌖</span><div><small>Regiões representadas</small><strong id="trainer-region-total">0</strong><span>Regiões Pokémon</span></div></article>
+            <article class="team-stat team-stat-green"><span class="team-stat-icon">▣</span><div><small>Atendimentos</small><strong id="trainer-appointments-total">0</strong><span>Registros no sistema</span></div></article>
+          </div>
+          <div class="team-toolbar trainer-toolbar">
+            <input class="search-input" id="busca-clientes" placeholder="Pesquisar por nome, telefone ou região">
+            <div class="trainer-filter-hint">Pesquise treinadores por nome, contato ou região.</div>
+            <button class="btn btn-light" id="limpar-busca-treinadores" type="button">Limpar busca</button>
+          </div>
+          <div class="team-list-heading"><h3>Treinadores cadastrados</h3><span id="trainer-result-count">0 treinadores</span></div>
+          <div class="doctor-grid team-doctor-grid trainer-grid" id="lista-clientes"></div>
+          <div class="pagination standalone" id="paginacao-clientes"></div>
+        </section>
+
+        <section class="page-section" id="pets">
+          <div class="pokemon-collection-heading"><div><span class="eyebrow">CENTRO POKÉMON</span><h2>Pokémon</h2><p>Gerencie os Pokémon dos treinadores e acompanhe seus cuidados.</p></div></div>
+          <div class="pokemon-collection-stats" id="pokemon-collection-stats"></div>
+          <div class="section-toolbar pokemon-toolbar">
+            <div class="filter-group">
+              <input class="search-input" id="busca-pets" placeholder="Pesquisar pet ou responsável">
+              <select id="filtro-especie"><option value="">Todas as espécies</option></select>
+            </div>
+            <button class="btn btn-primary" onclick="abrirPet()">+ Novo Pokémon</button>
+          </div>
+          <div class="pet-grid" id="lista-pets"></div>
+          <div class="pagination standalone" id="paginacao-pets"></div>
+        </section>
+
+        <section class="page-section team-page" id="veterinarios">
+          <div class="team-intro">
+            <div><span class="eyebrow">CENTRO POKÉMON</span><h2>Equipe do Centro Pokémon</h2><p>Gerencie os profissionais, suas especialidades e os atendimentos realizados.</p></div>
+            <button class="btn btn-primary" onclick="abrirVeterinario()">+ Novo integrante</button>
+          </div>
+          <div class="team-stats">
+            <article class="team-stat team-stat-pink"><span class="team-stat-icon">♟</span><div><small>Integrantes</small><strong id="team-total">0</strong><span>Profissionais cadastrados</span></div></article>
+            <article class="team-stat team-stat-blue"><span class="team-stat-icon">✚</span><div><small>Atendimentos realizados</small><strong id="team-consultas">0</strong><span>Registros no sistema</span></div></article>
+            <article class="team-stat team-stat-purple"><span class="team-stat-icon">✦</span><div><small>Especialidades</small><strong id="team-especialidades">0</strong><span>Áreas de atuação</span></div></article>
+            <article class="team-stat team-stat-green"><span class="team-stat-icon">▣</span><div><small>Próximos atendimentos</small><strong id="team-agendados">0</strong><span>Consultas agendadas</span></div></article>
+          </div>
+          <div class="team-toolbar">
+            <input class="search-input" id="busca-veterinarios" placeholder="Pesquisar profissional, CRMV ou especialidade">
+            <label class="team-filter"><span>Especialidade</span><select id="filtro-especialidade-equipe"><option value="">Todas</option></select></label>
+            <button class="btn btn-light" id="limpar-filtro-equipe" type="button">Limpar filtros</button>
+          </div>
+          <div class="team-list-heading"><h3>Profissionais cadastrados</h3><span id="team-result-count">0 integrantes</span></div>
+          <div class="doctor-grid team-doctor-grid" id="lista-veterinarios"></div>
+          <div class="pagination standalone" id="paginacao-veterinarios"></div>
+        </section>
+
+        <section class="page-section" id="consultas">
+          <div class="appointments-hero">
+            <img class="appointments-hero-art" src="images/pokemon-center-banner.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+            <div class="appointments-hero-overlay"></div>
+            <div class="appointments-hero-content">
+              <span class="appointments-hero-ball" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#fff" stroke="#26344a" stroke-width="2.5"/><path d="M3 24a21 21 0 0 1 42 0Z" fill="#ef3348"/><path d="M3 24h42" stroke="#26344a" stroke-width="4"/><circle cx="24" cy="24" r="7" fill="#fff" stroke="#26344a" stroke-width="2.5"/></svg></span>
+              <div><span class="eyebrow">CENTRO POKÉMON</span><h2>Atendimentos</h2><p>Acompanhe e gerencie todos os atendimentos da clínica.</p></div>
+            </div>
+          </div>
+          <div class="appointment-stats" id="appointment-stats">
+            <article class="appointment-stat stat-total"><span class="appointment-stat-icon">▦</span><div><small>Total de atendimentos</small><strong id="appointment-total">0</strong></div><span class="appointment-stat-watermark">◉</span></article>
+            <article class="appointment-stat stat-scheduled"><span class="appointment-stat-icon">◷</span><div><small>Agendados</small><strong id="appointment-scheduled">0</strong></div><span class="appointment-stat-watermark">▦</span></article>
+            <article class="appointment-stat stat-done"><span class="appointment-stat-icon">✓</span><div><small>Concluídos</small><strong id="appointment-done">0</strong></div><span class="appointment-stat-watermark">✓</span></article>
+            <article class="appointment-stat stat-cancelled"><span class="appointment-stat-icon">×</span><div><small>Cancelados</small><strong id="appointment-cancelled">0</strong></div><span class="appointment-stat-watermark">×</span></article>
+          </div>
+          <div class="appointment-list-heading">
+            <div><h3>Lista de atendimentos</h3><p>Consulte os registros, confira os status e gerencie cada visita.</p></div>
+            <span class="appointment-live-indicator"><i></i> Dados do sistema</span>
+          </div>
+          <div class="appointment-toolbar">
+            <label class="appointment-search"><span aria-hidden="true">⌕</span><input class="search-input" id="busca-consultas" placeholder="Buscar Pokémon, treinador ou veterinário..." aria-label="Pesquisar atendimentos"></label>
+            <label class="appointment-filter"><span>Status</span><span class="appointment-select"><select id="filtro-status"><option value="">Todos os status</option><option>Agendada</option><option>Concluída</option><option>Cancelada</option></select></span></label>
+            <label class="appointment-filter"><span>Período</span><span class="appointment-select period-select"><select id="filtro-periodo" aria-label="Filtrar por período"><option value="all">Todos os períodos</option><option value="today">Hoje</option><option value="7">Últimos 7 dias</option><option value="30">Últimos 30 dias</option></select></span></label>
+          </div>
+          <div class="panel table-panel appointment-table-panel">
+            <div class="responsive-table">
+              <table class="appointment-table">
+                <thead><tr><th>Data e horário</th><th>Pokémon / Treinador</th><th>Veterinário</th><th>Motivo</th><th>Status</th><th>Ações</th></tr></thead>
+                <tbody id="lista-consultas"></tbody>
+              </table>
+            </div>
+            <div class="appointment-table-footer"><span id="appointment-results">Mostrando 0 atendimentos</span><div class="pagination" id="paginacao-consultas"></div></div>
+          </div>
+        </section>
+
+        <section class="page-section" id="pokedex">
+          <div class="pokedex-intro panel">
+            <div class="pokedex-intro-copy">
+              <span class="eyebrow">POKÉDEX NACIONAL</span>
+              <h2>Explore o mundo Pokémon</h2>
+              <p>Pesquise por nome ou número e descubra tipos, habilidades, medidas e estatísticas de cada Pokémon.</p>
+            </div>
+            <div class="pokedex-search">
+              <label for="pokedex-search-input">Nome ou número do Pokémon</label>
+              <div class="pokedex-search-row">
+                <input id="pokedex-search-input" type="search" placeholder="Ex.: Pikachu ou 25" autocomplete="off">
+                <button class="btn btn-primary" id="pokedex-search-button" type="button">Pesquisar</button>
+              </div>
+              <p class="pokedex-api-note">Informações fornecidas pela PokéAPI pública.</p>
+            </div>
+          </div>
+          <div id="pokedex-message" class="pokedex-message" role="status" aria-live="polite">Carregando Pokémon...</div>
+          <section id="pokedex-detail" class="panel pokedex-detail hidden" aria-live="polite"></section>
+          <div class="pokedex-list-header">
+            <div><h2>Pokémon para descobrir</h2><p id="pokedex-list-subtitle">Primeiros Pokémon da Pokédex</p></div>
+            <div class="pokedex-list-tools">
+              <label class="pokedex-type-filter" for="pokedex-type-filter">Filtrar por tipo
+                <select id="pokedex-type-filter">
+                  <option value="all">Todos os tipos</option>
+                  <option value="normal">Normal</option><option value="fire">Fogo</option><option value="water">Água</option><option value="electric">Elétrico</option>
+                  <option value="grass">Planta</option><option value="ice">Gelo</option><option value="fighting">Lutador</option><option value="poison">Venenoso</option>
+                  <option value="ground">Terrestre</option><option value="flying">Voador</option><option value="psychic">Psíquico</option><option value="bug">Inseto</option>
+                  <option value="rock">Pedra</option><option value="ghost">Fantasma</option><option value="dragon">Dragão</option><option value="dark">Sombrio</option>
+                  <option value="steel">Aço</option><option value="fairy">Fada</option>
+                </select>
+              </label>
+              <div class="pokedex-pagination">
+              <button class="btn btn-light" id="pokedex-prev" type="button" disabled>Anterior</button>
+              <button class="btn btn-light" id="pokedex-next" type="button">Próximos</button>
+              </div>
+            </div>
+          </div>
+          <div id="pokedex-grid" class="pokedex-grid"></div>
+        </section>
+
+        <section class="page-section" id="calendario">
+          <div class="calendar-hero">
+            <img class="calendar-hero-art" src="images/pokemon-center-banner.png" alt="Ilustração do Centro Pokémon" onerror="this.style.display='none'">
+            <div class="calendar-hero-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#fff" stroke="#26344a" stroke-width="2.5"/><path d="M3 24a21 21 0 0 1 42 0Z" fill="#ef3348"/><path d="M3 24h42" stroke="#26344a" stroke-width="4"/><circle cx="24" cy="24" r="7" fill="#fff" stroke="#26344a" stroke-width="2.5"/><circle cx="24" cy="24" r="3" fill="#dce4ef"/></svg></div>
+            <div class="calendar-hero-copy"><span class="eyebrow">CENTRO POKÉMON</span><h2>Agenda de atendimentos</h2><p>Organize os cuidados da equipe e acompanhe a jornada de cada Pokémon.</p></div>
+            <div class="calendar-hero-side"><span class="calendar-status-dot"></span> Agenda da clínica</div>
+          </div>
+          <div class="calendar-stats" id="calendar-stats"></div>
+          <div class="calendar-panel">
+            <div class="calendar-toolbar">
+              <div><span class="calendar-toolbar-label">CALENDÁRIO MENSAL</span><p>Selecione o mês para consultar os atendimentos agendados.</p></div>
+              <div class="calendar-controls">
+                <button class="icon-button" id="prev-month" type="button" aria-label="Mês anterior"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <h2 id="calendar-title"></h2>
+                <button class="icon-button" id="next-month" type="button" aria-label="Próximo mês"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+              </div>
+            </div>
+            <div class="calendar-legend"><span><i class="legend-dot legend-appointment"></i> Atendimento agendado</span><span><i class="legend-dot legend-today"></i> Hoje</span></div>
+            <div class="calendar" id="calendar-grid"></div>
+          </div>
+          <section class="calendar-pokemon-section" aria-label="Pokémon parceiros">
+            <div class="calendar-pokemon-heading"><div><span class="calendar-toolbar-label">PARCEIROS DO CENTRO</span><h3>Pokémon prontos para ajudar</h3><p>Um lembrete para cuidar de cada parceiro com atenção.</p></div><span class="calendar-pokemon-ball" aria-hidden="true">●</span></div>
+            <div class="calendar-pokemon-cards">
+              <article class="calendar-pokemon-card"><div class="calendar-pokemon-art pokemon-pikachu"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" loading="lazy"></div><div><span class="pokemon-role">Energia e acolhimento</span><h4>Pikachu</h4><p>Pronto para dar as boas-vindas aos treinadores.</p></div><span class="pokemon-type type-electric">Elétrico</span></article>
+              <article class="calendar-pokemon-card"><div class="calendar-pokemon-art pokemon-chansey"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png" alt="Chansey" loading="lazy"></div><div><span class="pokemon-role">Cuidado e recuperação</span><h4>Chansey</h4><p>Sempre ao lado da equipe durante os cuidados.</p></div><span class="pokemon-type type-fairy">Apoio</span></article>
+              <article class="calendar-pokemon-card"><div class="calendar-pokemon-art pokemon-eevee"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png" alt="Eevee" loading="lazy"></div><div><span class="pokemon-role">Companhia especial</span><h4>Eevee</h4><p>Um parceiro curioso para alegrar a clínica.</p></div><span class="pokemon-type type-normal">Normal</span></article>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <nav class="mobile-bottom-nav">
+    <button data-section="dashboard" class="active"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span><small>Início</small></button>
+    <button data-section="pets"><span><svg class="icon pokeball-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#17233b" stroke-width="1.5"/><path d="M2 12a10 10 0 0 1 20 0Z" fill="#ef3348"/><path d="M2 12h20" stroke="#17233b" stroke-width="2.2"/><circle cx="12" cy="12" r="3.1" fill="#fff" stroke="#17233b" stroke-width="1.5"/></svg></span><small>Pets</small></button>
+    <button data-section="pokedex"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span><small>Pokédex</small></button>
+    <button data-section="consultas"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1Z"/><path d="M8.5 12h7M8.5 16h5"/></svg></span><small>Agenda</small></button>
+    <button data-section="calendario"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><small>Calendário</small></button>
+  </nav>
+
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div><span class="eyebrow">PETCARE</span><h2 id="modal-title">Cadastro</h2></div>
+        <button class="icon-button" onclick="fecharModal()"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <form id="modal-form"></form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
